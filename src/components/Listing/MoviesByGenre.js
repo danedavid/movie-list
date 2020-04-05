@@ -3,7 +3,7 @@ import React, {
   useState
 } from 'react';
 import { getGenres } from 'apis';
-import { Spinner } from 'evergreen-ui'
+import { Spinner } from 'components/common';
 import GenreList from './GenreList';
 
 const MoviesByGenre = () => {

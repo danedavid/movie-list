@@ -1,5 +1,5 @@
 import React from 'react';
-import { Spinner } from 'evergreen-ui'
+import { Spinner } from 'components/common';
 import ListLayout from './ListLayout';
 import MovieCard from './MovieCard';
 import Carousel from '@brainhubeu/react-carousel';

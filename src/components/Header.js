@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import useSetState from '@danedavid/usesetstate';
-import { Spinner } from 'evergreen-ui';
+import { Spinner } from 'components/common';
 import { getPopularMovies } from 'apis';
 import Carousel from '@brainhubeu/react-carousel';
 import 'styles/Header.css';
