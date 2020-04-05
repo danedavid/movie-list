@@ -4,10 +4,10 @@ import MoviesByGenre from './MoviesByGenre';
 
 const Listing = () => {
   return (
-    <div>
+    <>
       <MyList/>
       <MoviesByGenre/>
-    </div>
+    </>
   )
 };
 

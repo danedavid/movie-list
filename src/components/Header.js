@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Carousel, { Dots } from '@brainhubeu/react-carousel';
+// import Carousel, { Dots } from '@brainhubeu/react-carousel';
 
 const Header = () => {
   useEffect(() => {

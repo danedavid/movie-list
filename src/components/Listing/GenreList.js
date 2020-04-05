@@ -50,6 +50,7 @@ const GenreList = ({
                 movies.list.map(movie => {
                   return (
                     <MovieCard
+                      key={movie.id}
                       movie={movie}
                     />
                   )
