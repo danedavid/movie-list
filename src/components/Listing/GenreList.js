@@ -1,9 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import useSetState from '@danedavid/usesetstate';
-import { Spinner } from 'evergreen-ui'
-import ListLayout from './ListLayout';
-import MovieCard from './MovieCard';
-import Carousel from '@brainhubeu/react-carousel';
+import AddMovieContext from 'utils/context';
+import GenericList from './GenericList';
 import '@brainhubeu/react-carousel/lib/style.css';
 import { getMoviesByGenre } from 'apis';
 
@@ -15,6 +13,7 @@ const GenreList = ({
     error: false,
     loading: true,
   });
+  const addMovie = useContext(AddMovieContext);
 
   const fetchGenreMovies = async () => {
     try {
@@ -22,7 +21,7 @@ const GenreList = ({
         id: genre.id,
       });
       setMovies({ loading: false, list: data.results });
-      console.log(data);
+      // console.log(data);
     } catch (err) {
       setMovies({ loading: false, error: true });
       console.error(err);
@@ -34,33 +33,13 @@ const GenreList = ({
   }, []);
 
   return (
-    <ListLayout title={genre.name}>
-      {
-        movies.loading
-        ? <Spinner/>
-        : (
-          movies.error
-          ? 'Something went wrong'
-          : (
-            <Carousel
-              slidesPerPage={5}
-              arrows
-            >
-              {
-                movies.list.map(movie => {
-                  return (
-                    <MovieCard
-                      key={movie.id}
-                      movie={movie}
-                    />
-                  )
-                })
-              }
-            </Carousel>
-          )
-        )
-      }
-    </ListLayout>
+    <GenericList
+      title={genre.name}
+      loading={movies.loading}
+      error={movies.error}
+      list={movies.list}
+      onCardClick={(movie) => addMovie(movie)}
+    />
   );
 };
 

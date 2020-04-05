@@ -1,0 +1,13 @@
+.empty-container {
+  background-color: #111111;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.empty-message {
+  font-size: 28px;
+  opacity: 0.8;
+  text-align: center;
+}

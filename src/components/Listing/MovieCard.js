@@ -4,12 +4,14 @@ import { Icon } from 'evergreen-ui';
 import moment from 'moment';
 import 'styles/MovieCard.css';
 
+const noop = () => {};
+
 const MovieCard = ({
   movie,
+  onCardClick = noop,
 }) => {
-  // console.log(movie)
   return (
-    <div className="card">
+    <div className="card" onClick={() => onCardClick()}>
       <img
         className="poster"
         src={`http://image.tmdb.org/t/p/w342/${movie.poster_path}`}

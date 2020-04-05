@@ -1,3 +1,12 @@
 body {
   margin: 0;
 }
+
+.BrainhubCarousel__arrows {
+  background-color: transparent !important;
+}
+
+.BrainhubCarousel__arrows:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

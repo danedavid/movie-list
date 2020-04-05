@@ -1,3 +1,7 @@
+.list-layout {
+  min-height: 300px;
+}
+
 .list-title {
   color: #ffffff;
 }
