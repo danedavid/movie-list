@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, useMemo } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import useSetState from '@danedavid/usesetstate';
 import {
   getMyList,
@@ -19,7 +19,6 @@ const Listing = () => {
   const fetchMovies = async () => {
     try {
       const list = await getMyList();
-      console.log(list)
       setMovies({ loading: false, list });
     } catch (err) {
       setMovies({ loading: false, error: true });

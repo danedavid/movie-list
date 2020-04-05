@@ -1,7 +1,10 @@
 .list-layout {
   min-height: 300px;
+  margin-top: 72px;
 }
 
 .list-title {
   color: #ffffff;
+  padding-left: 48px;
+  font-size: 24px;
 }

@@ -9,6 +9,10 @@ export const getMoviesByGenre = ({ id, page = 1 }) => {
   return http.get(`/discover/movie?with_genres=${id}`);
 };
 
+export const getPopularMovies = () => {
+  return http.get(`/movie/popular`);
+};
+
 export const addMovie = ({ movie }) => {
   return new Promise((resolve, reject) => {
     try {

@@ -1,0 +1,33 @@
+.header-container {
+  height: 440px;
+  width: 100vw;
+  position: relative;
+}
+
+.header-banner {
+  width: 780px;
+}
+
+.header-overlay {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.header-overlay.overlay-left {
+  left: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5), transparent);
+}
+
+.header-overlay .header-title {
+  font-size: 72px;
+  font-weight: 500;
+  display: inline-block;
+  position: absolute;
+  top: 40%;
+  left: 32px;
+}
