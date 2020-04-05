@@ -9,6 +9,7 @@ const MyList = ({ movies, deleteMovie }) => {
       error={movies.error}
       list={movies.list}
       onCardClick={movie => deleteMovie(movie)}
+      showDeleteButton
     />
   )
 };

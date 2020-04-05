@@ -1,6 +1,7 @@
 import React from 'react';
+import classNames from 'classnames';
 import trim from 'utils/trim';
-import { Icon } from 'evergreen-ui';
+import { Icon, IconButton } from 'evergreen-ui';
 import moment from 'moment';
 import 'styles/MovieCard.css';
 
@@ -9,9 +10,29 @@ const noop = () => {};
 const MovieCard = ({
   movie,
   onCardClick = noop,
+  showDeleteButton
 }) => {
   return (
-    <div className="card" onClick={() => onCardClick()}>
+    <div
+      className={classNames({
+        "card": true,
+        "clickable": !showDeleteButton,
+      })}
+      onClick={() => {
+        if ( !showDeleteButton ) {
+          onCardClick();
+        }
+      }}
+    >
+      {showDeleteButton && (<IconButton
+        position="absolute"
+        left="20px"
+        top="20px"
+        opacity="0"
+        icon="trash"
+        intent="danger"
+        onClick={onCardClick}
+      />)}
       <img
         className="poster"
         src={`http://image.tmdb.org/t/p/w342/${movie.poster_path}`}

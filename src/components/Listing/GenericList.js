@@ -14,6 +14,7 @@ const GenericList = ({
   error,
   list,
   onCardClick = noop,
+  showDeleteButton = false,
 }) => {
   return (
     <ListLayout title={title}>
@@ -43,6 +44,7 @@ const GenericList = ({
                             onCardClick={() => onCardClick(movie)}
                             key={movie.id}
                             movie={movie}
+                            showDeleteButton={showDeleteButton}
                           />
                         )
                       })
